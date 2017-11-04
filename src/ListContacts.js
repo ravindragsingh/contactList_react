@@ -6,13 +6,14 @@ class ListContacts extends Component {
 
     return (
       
-       <ol> 
+       <ol className = 'contact-list'> 
           {this.props.contacts.map((contact)=> 
-          <li>{contact.name} 
-              <div>
+          <li className = 'contact-list-item'>{contact.name} 
+              <div className = 'contact-details'>
               <p>{contact.email}</p>
               <p>{contact.id}</p>
           </div>
+          <button className = 'contact-remove'></button>
           </li>
           
           
