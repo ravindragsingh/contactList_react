@@ -7,7 +7,10 @@ class ListContacts extends Component {
     return (
       
        <ol> 
-          
+          {this.props.contacts.map((contact)=> 
+          <li>{contact.name}</li>,
+         
+          ) }
        </ol>
     );
   }
