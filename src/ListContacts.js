@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class ListContacts extends Component {
   render() {
-    console.log('props', this.props)
+    //console.log('props', this.props)
 
     return (
       
@@ -13,7 +13,7 @@ class ListContacts extends Component {
               <p>{contact.email}</p>
               <p>{contact.id}</p>
           </div>
-          <button className = 'contact-remove'></button>
+          <button className = 'contact-remove'>Remove</button>
           </li>
           
           

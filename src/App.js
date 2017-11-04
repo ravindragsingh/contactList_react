@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ListContacts from './ListContacts'
+import Header from './Header'
 
 const contacts = [
   {
@@ -30,7 +31,7 @@ class App extends Component {
 //const people = contacts.map((id) =>contacts.id ===id )
     return (
       <div className="App">
-        <h1>This app is to demonstrate Pure react with Router functions</h1>
+        <Header text = 'This app is to demonstrate Pure react with Router functions'/>
         <ListContacts contacts = {contacts} />
       </div>
     );
