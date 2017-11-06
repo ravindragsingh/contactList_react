@@ -28,13 +28,22 @@ class App extends Component {
   }
 ]
   }
+
+  removeContact = (contact) =>{
+    this.setState((state) => ({
+      contacts:state.contacts.filter((c) =>
+        c.id !==contact.id)} )
+    )}
+  
   render() {
     
 //const people = contacts.map((id) =>contacts.id ===id )
     return (
       <div className="App">
       <Header text = 'This app is to demonstrate Pure react with Router functions'/>
-        <ListContacts contacts = {this.state.contacts} />
+        <ListContacts contacts = {this.state.contacts} 
+        onDeleteContact = {this.removeContact}
+        />
       </div>
     );
   }

@@ -9,3 +9,7 @@ now you can access data in child component from parent - display
 Adding state to the component - Passing data from parent component to child component using state
   App.js file updated with state but moving the data inside class (component App) and using keyword state to declare state of the app
   once the state is update then the UI component will take care of display part
+
+Delete functionality
+  create removeContact method in App.js and pass it as prop to Listcontacts.js
+  now we can see we are passing state and prop both to the child component 

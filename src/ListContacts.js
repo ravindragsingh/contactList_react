@@ -13,7 +13,8 @@ class ListContacts extends Component {
               <p>{contact.email}</p>
               <p>{contact.id}</p>
           </div>
-          <button className = 'contact-remove'>Remove</button>
+          <button  onClick = {() =>this.props.onDeleteContact(contact)}
+          className = 'contact-remove'>Remove</button>
           </li>
           
           
