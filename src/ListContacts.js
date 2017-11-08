@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import escapeRegExp from 'escape-string-regexp';
+import sortBy from 'sort-by'
 
 class ListContacts extends Component {
   state = {
@@ -10,7 +12,18 @@ class ListContacts extends Component {
   
   render() {
     //console.log('props', this.props)
+    let showingContacts // this will be the contacts matching specific pattern
 
+    if(this.state.query){
+      const match = new RegExp(escapeRegExp(this.state.query), 'i')
+      showingContacts = this.props.contacts.filter((contact) => match.test(contact.name))
+
+    }
+    else {
+      showingContacts = this.props.contacts //you cannot have just contacts as that is being received from App.js
+    }
+
+    showingContacts.sort(sortBy('name'))
     return (
       
       <div className = 'list-contacts'>
@@ -29,7 +42,10 @@ class ListContacts extends Component {
 
         </div>
           <ol className = 'contact-list'> 
-          {this.props.contacts.map((contact)=> 
+          {
+            //this.props.contacts.map((contact)=> // this was giving all array now we are going to use showingcontacts
+            // as that is the filtered array
+            showingContacts.map((contact)=> 
           <li className = 'contact-list-item'>{contact.name} 
               <div className = 'contact-details'>
               <p>{contact.email}</p>
