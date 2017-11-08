@@ -9,6 +9,12 @@ class ListContacts extends Component {
   updateQuery = ((query) => {
     this.setState({query: query.trim()})
   })
+
+  //clear query method to be used in button to reset the search
+
+  clearQuery = () => {
+    this.setState ({ query :''})
+  }
   
   render() {
     //console.log('props', this.props)
@@ -41,6 +47,18 @@ class ListContacts extends Component {
           />
 
         </div>
+
+        {showingContacts.length !== this.props.contacts.length &&
+        (
+          <div>
+            {showingContacts.length} of {this.props.contacts.length} contacts displayed
+            
+            <button onClick = {this.clearQuery}>
+            Show All
+            </button>
+          </div>
+        )
+        }
           <ol className = 'contact-list'> 
           {
             //this.props.contacts.map((contact)=> // this was giving all array now we are going to use showingcontacts
