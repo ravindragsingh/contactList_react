@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
 
 class ListContacts extends Component {
+  state = {
+    query : ''
+  }
+  
   render() {
     //console.log('props', this.props)
 
     return (
       
-       <ol className = 'contact-list'> 
+      <div className = 'list-contacts'>
+
+        <div className = 'list-contacts-top'>
+          <input type="text"
+          placeholder = 'Search the contacts'/>
+
+        </div>
+          <ol className = 'contact-list'> 
           {this.props.contacts.map((contact)=> 
           <li className = 'contact-list-item'>{contact.name} 
               <div className = 'contact-details'>
@@ -21,6 +32,8 @@ class ListContacts extends Component {
          
           ) }
        </ol>
+      </div>
+       
     );
   }
 }

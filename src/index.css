@@ -82,7 +82,7 @@ body, .app {
 .list-contacts-top {
   position: fixed;
   width: 100%;
-  top: 0;
+  top: 10;
   border-bottom: 1px solid #d5d8df;
   display: flex;
 }
